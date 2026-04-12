@@ -1,0 +1,2 @@
+ModuleDatabaseSwitchName = DatabaseSwitch
+ModuleDatabaseSwitchDesc = Migration bidirectionnelle MariaDB ↔ PostgreSQL pour Dolibarr

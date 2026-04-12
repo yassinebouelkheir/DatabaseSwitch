@@ -1,0 +1,6 @@
+/* databaseswitch — icône navbar */
+div.mainmenu.databaseswitch::before {
+    content: "\f1c0";                /* fa-database */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}

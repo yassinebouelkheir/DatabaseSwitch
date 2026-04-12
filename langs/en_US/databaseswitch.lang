@@ -1,0 +1,2 @@
+Module500010Name = DatabaseSwitch
+Module500010Desc = Complete and secure migration of your Dolibarr database between MariaDB and PostgreSQL in both directions.

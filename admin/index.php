@@ -40,13 +40,13 @@ $destinationUser    = $isCurrentlyPostgres ? 'dolibarr' : 'dolibarr_pg';
 
 <style>
 :root {
-    --color-blue:
-    --color-green:
-    --color-red:
-    --color-yellow:
-    --color-gray:
-    --color-border:
-    --color-bg:
+    --color-blue:   #1a73e8;
+    --color-green:  #34a853;
+    --color-red:    #ea4335;
+    --color-yellow: #f9ab00;
+    --color-gray:   #5f6368;
+    --color-border: #e8eaed;
+    --color-bg:     #f8f9fa;
 }
 * { box-sizing: border-box; }
 
@@ -55,12 +55,13 @@ $destinationUser    = $isCurrentlyPostgres ? 'dolibarr' : 'dolibarr_pg';
     margin: 24px auto;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 14px;
-    color:
+    color: #202124;
 }
 
+/* ── Header ── */
 .dbm-header {
-    background: linear-gradient(135deg,
-    color:
+    background: linear-gradient(135deg, #0d47a1, #1a73e8);
+    color: #fff;
     border-radius: 12px;
     padding: 24px 28px;
     margin-bottom: 20px;
@@ -72,51 +73,59 @@ $destinationUser    = $isCurrentlyPostgres ? 'dolibarr' : 'dolibarr_pg';
 .dbm-header p    { margin: 4px 0 0; opacity: .85; font-size: 13px; }
 .dbm-dir-badge   { background: rgba(255,255,255,.2); border-radius: 8px; padding: 8px 16px; font-size: 20px; font-weight: 700; }
 
-.dbm-card { background:
+/* ── Cards ── */
+.dbm-card { background: #fff; border: 1px solid var(--color-border); border-radius: 10px; padding: 22px; margin-bottom: 18px; }
 .dbm-card h2 { margin: 0 0 14px; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
 
+/* ── Badges ── */
 .dbm-badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; }
-.dbm-badge-blue   { background:
-.dbm-badge-green  { background:
-.dbm-badge-orange { background:
+.dbm-badge-blue   { background: #e8f0fe; color: var(--color-blue); }
+.dbm-badge-green  { background: #e6f4ea; color: var(--color-green); }
+.dbm-badge-orange { background: #fef3e2; color: #e37400; }
 
+/* ── Alertes ── */
 .dbm-alert { padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; font-size: 13px; line-height: 1.6; }
-.dbm-alert-info { background:
-.dbm-alert-warn { background:
+.dbm-alert-info { background: #e8f0fe; border: 1px solid #aecbfa; color: #1a3c6d; }
+.dbm-alert-warn { background: #fef3e2; border: 1px solid #fbbc04; color: #7c5c00; }
 
+/* ── Grilles de champs ── */
 .dbm-grid-2 { display: grid; grid-template-columns: 1fr 1fr;        gap: 12px; }
 .dbm-grid-3 { display: grid; grid-template-columns: 2fr 1fr 1fr;    gap: 12px; }
 .dbm-field  { display: flex; flex-direction: column; gap: 4px; }
 .dbm-field label { font-size: 11px; font-weight: 600; color: var(--color-gray); text-transform: uppercase; letter-spacing: .4px; }
-.dbm-field input { padding: 9px 12px; border: 1.5px solid var(--color-border); border-radius: 6px; font-size: 13px; color:
-.dbm-field input:focus { outline: none; border-color: var(--color-blue); background:
+.dbm-field input { padding: 9px 12px; border: 1.5px solid var(--color-border); border-radius: 6px; font-size: 13px; color: #202124; background: #fafafa; transition: border .15s; }
+.dbm-field input:focus { outline: none; border-color: var(--color-blue); background: #fff; }
 
+/* ── Boutons ── */
 .dbm-btn { display: inline-flex; align-items: center; gap: 7px; padding: 10px 22px; border: none; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all .15s; white-space: nowrap; }
-.dbm-btn-primary { background: var(--color-blue); color:
-.dbm-btn-primary:hover { background:
-.dbm-btn-primary:disabled { background:
-.dbm-btn-ghost  { background:
-.dbm-btn-ghost:hover { background:
-.dbm-btn-danger { background:
-.dbm-btn-danger:hover { background:
+.dbm-btn-primary { background: var(--color-blue); color: #fff; }
+.dbm-btn-primary:hover { background: #1557b0; }
+.dbm-btn-primary:disabled { background: #9aa0a6; cursor: not-allowed; }
+.dbm-btn-ghost  { background: #e8f0fe; color: var(--color-blue); border: 1.5px solid #aecbfa; }
+.dbm-btn-ghost:hover { background: #d2e3fc; }
+.dbm-btn-danger { background: #fce8e6; color: var(--color-red); border: 1.5px solid #f5c6c2; }
+.dbm-btn-danger:hover { background: #f5c6c2; }
 
+/* ── Info-boxes (résumé conf) ── */
 .dbm-info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 18px; }
 .dbm-info-box  { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 8px; padding: 12px 16px; text-align: center; }
 .dbm-info-box .value { font-size: 18px; font-weight: 700; color: var(--color-blue); word-break: break-all; }
 .dbm-info-box .label { font-size: 11px; color: var(--color-gray); margin-top: 2px; }
 
+/* ── Barre de progression ── */
 .dbm-progress { height: 6px; background: var(--color-border); border-radius: 3px; margin-bottom: 18px; overflow: hidden; }
 .dbm-progress-fill { height: 100%; background: linear-gradient(90deg, var(--color-blue), var(--color-green)); border-radius: 3px; transition: width .6s ease; width: 0; }
 
+/* ── Liste des étapes ── */
 .dbm-steps { display: flex; flex-direction: column; }
 .dbm-step  { display: flex; align-items: flex-start; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--color-border); }
 .dbm-step:last-child { border-bottom: none; }
 
 .dbm-step-num { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 2px; transition: all .3s; }
-.dbm-step-num.waiting { background:
-.dbm-step-num.running { background:
-.dbm-step-num.success { background:
-.dbm-step-num.failed  { background:
+.dbm-step-num.waiting { background: #f1f3f4; color: var(--color-gray); }
+.dbm-step-num.running { background: #e8f0fe; color: var(--color-blue); animation: dbm-pulse 1s infinite; }
+.dbm-step-num.success { background: #e6f4ea; color: var(--color-green); }
+.dbm-step-num.failed  { background: #fce8e6; color: var(--color-red); }
 
 @keyframes dbm-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .4; } }
 
@@ -124,11 +133,12 @@ $destinationUser    = $isCurrentlyPostgres ? 'dolibarr' : 'dolibarr_pg';
 .dbm-step-title  { font-weight: 600; font-size: 13px; }
 .dbm-step-desc   { color: var(--color-gray); font-size: 12px; margin-top: 2px; }
 
+/* ── Log terminal ── */
 .dbm-log {
     font-family: 'Fira Code', 'Consolas', monospace;
     font-size: 11px;
-    background:
-    color:
+    background: #1e1e2e;
+    color: #cdd6f4;
     border-radius: 6px;
     padding: 10px 12px;
     margin-top: 8px;
@@ -140,6 +150,8 @@ $destinationUser    = $isCurrentlyPostgres ? 'dolibarr' : 'dolibarr_pg';
     line-height: 1.5;
 }
 .dbm-log.visible { display: block; }
+/* Log migrate plus grand — peut contenir beaucoup de DEBUG */
+#steplog-migrate { max-height: 600px; }
 
 </style>
 
